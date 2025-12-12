@@ -3,6 +3,17 @@
   "outputDirectory": "build/client",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": null
+  "framework": null,
+  "functions": {
+    "api/server.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/server"
+    }
+  ]
 }
 
