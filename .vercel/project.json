@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_zdQIRQEIwWg4sJXrMzJG259kwkgx",
+  "orgId": "team_uYHvJSRWhGRVXELF6ttFPcHe",
+  "projectName": "react-router-ai-blog-website",
+  "settings": {
+    "createdAt": 1765538606125,
+    "framework": "vite",
+    "devCommand": "npm run dev",
+    "installCommand": "npm install",
+    "buildCommand": "npm run build",
+    "outputDirectory": "build/client",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}
