@@ -3,9 +3,9 @@
   "outputDirectory": "build/client",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": null,
+  "framework": "vite",
   "functions": {
-    "api/**/*.js": {
+    "api/server.js": {
       "runtime": "nodejs20.x"
     }
   },
