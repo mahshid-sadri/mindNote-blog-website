@@ -1,12 +1,22 @@
 import { installGlobals } from "@react-router/node";
 import { createRequestHandler } from "@react-router/node";
-import * as build from "../build/server/index.js";
 
-// Polyfills for Fetch/Request/Response etc. in the Node runtime
+// MUST import from the server build entry (Vite output)
+import * as build from "../build/server/entry.server.js";
+
 installGlobals();
 
-export default createRequestHandler({
-  build,
-  mode: process.env.NODE_ENV,
-});
+export default async function handler(req, res) {
+  try {
+    const handleRequest = createRequestHandler({
+      build,
+      mode: process.env.NODE_ENV,
+    });
 
+    return handleRequest(req, res);
+  } catch (err) {
+    console.error("SSR Error:", err);
+    res.statusCode = 500;
+    res.end("Internal Server Error");
+  }
+}
