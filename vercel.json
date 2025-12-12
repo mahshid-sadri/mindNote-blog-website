@@ -1,19 +1,14 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "build/client",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "vite",
-  "functions": {
-    "api/server.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api/server"
+      "src": "api/server.js",
+      "use": "@vercel/node",
+      "config": { "runtime": "nodejs20.x" }
     }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/server.js" }
   ]
 }
 
